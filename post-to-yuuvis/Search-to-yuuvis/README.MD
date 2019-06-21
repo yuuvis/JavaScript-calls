@@ -4,69 +4,91 @@
 
 **yuuvis® Ultimate** is the ultimate freedom to innovate. Get access to the latest API endpoints as the yuuvis® development team releases them on its journey to aPaas.
 
-## Store one or more documents
+## Search documents by search query
 
-The **"Store one or more documents"** endpoint requires a multipart body with an index data parameter as well as a binary content parameter.
+The **"Search documents by search query"** endpoint requires a JSON body containing your search query.
 
-Save your index data as file (e.g. metadata.json) and use it for the data parameter. For the binary content, the cid_63apple parameter, you can use any file you'd like to store. Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
+The search parameters skipCount and maxItems allow paging for search queries, whereby maxItems defines the maximum number of entries in the hit list and skipCount the maximum number of entries to be skipped.
 
-If the request is successful, the index data of the previously stored document will be returned in JSON format.
-
-Index Data Example, JSON Format
-
-```
-{`
- ` ` ` ` `"objects": [{`
- ` ` ` ` ` ` ` ` `"properties": {`
- ` ` ` ` ` ` ` ` ` ` ` ` `"enaio:objectTypeId": {`
- ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` `"value": "document"`
- ` ` ` ` ` ` ` ` ` ` ` ` `},`
- ` ` ` ` ` ` ` ` ` ` ` ` `"Name": {`
- ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` `"value": "my document"`
- ` ` ` ` ` ` ` ` ` ` ` ` `}`
- ` ` ` ` ` ` ` ` `},`
- ` ` ` ` ` ` ` ` `"contentStreams": [{`
- ` ` ` ` ` ` ` ` ` ` ` ` `"cid": "cid_63apple"`
- ` ` ` ` ` ` ` ` `}]`
- ` ` ` ` `}]`
- `}
- ```
-How to ...
+[CMIS-Based Query Language](https://yuuvis.portal.azure-api.net/how-to/CMIS)
 
 ## Request
 
 ### Request URL
 
-https://yuuvis.azure-api.net/dms/objects[?data][&cid_63apple]
- 
-## Request parameters
+https://yuuvis.azure-api.net/dms/objects/search
 
-```
-    -data (optional)                File
-    ------------------------------------
-    -cid_63apple (optional)         File
-```
 ## Request headers
 
-Content-Type (optional) string Media type of the body sent to the API.
-Ocp-Apim-Subscription-Key string Subscription key which provides access to this API. Found in your Profile.
+```
+Content-Type (optional)         string      Media type of the body sent to the API.
+----------------------------------------------------------------------------------------------------------------------
+Ocp-Apim-Subscription-Key       string      Subscription key which provides access to this API. Found in your Profile.
 
+```
 ## Request body
 
+A *search query* consists of three parameters:
+
+- **statement** - the SELECT statement (CMIS-Based Query Language)
+- **skipCount** - defines the maximum number of entries to be skipped (for paging)
+-  **maxItems** - defines the maximum number of entries in the hit list
+
+
+`application/json`
+
+### Sample
+
 ```
--**data** \*required\
-string ($binary) 
-index data for the document (object) to be imported as JSON file
-
--**cid_63apple** \*required\
-string ($binary) 
-document (object) itself to be imported as binary file
+{
+  "query": {
+    "statement": "SELECT * FROM enaio:object",
+    "skipCount": 0,
+    "maxItems": 50
+  }
+}
 ```
 
-
-Note: Make sure the `cid_63apple` ID is referenced in the corresponding index data
-
-multipart/form-data
+### Schema
+```
+ {
+  "title": "Search Request",
+  "required": [
+    "query"
+  ],
+  "type": "object",
+  "properties": {
+    "query": {
+      "required": [
+        "maxItems",
+        "skipCount",
+        "statement"
+      ],
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "skipCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxItems": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  },
+  "example": {
+    "query": {
+      "statement": "SELECT * FROM enaio:object",
+      "skipCount": 0,
+      "maxItems": 50
+    }
+  }
+}
+```
 
 ## Responses
 
@@ -76,11 +98,11 @@ multipart/form-data
 
 ## Representations
 
+`application/json`
 
-### sample
+### Sample
 ```
-
-{
+ {
   "objects": [
     {
       "properties": {
@@ -130,16 +152,22 @@ multipart/form-data
         }
       ]
     }
-  ]
+  ],
+  "numItems": 1,
+  "hasMoreItems": false,
+  "totalNumItems": 1
 }
 ```
 ### Schema
 
 ```
 {
-  "title": "Import Object Response",
+  "title": "Search Response Object",
   "required": [
-    "objects"
+    "hasMoreItems",
+    "numItems",
+    "objects",
+    "totalNumItems"
   ],
   "type": "object",
   "properties": {
@@ -185,45 +213,16 @@ multipart/form-data
         }
       }
     },
-    "contentStreams": {
-      "type": "array",
-      "items": {
-        "title": "Content Stream Object",
-        "required": [
-          "archivePath",
-          "contentStreamId",
-          "digest",
-          "fileName",
-          "length",
-          "mimeType",
-          "repositoryId"
-        ],
-        "type": "object",
-        "properties": {
-          "contentStreamId": {
-            "type": "string"
-          },
-          "archivePath": {
-            "type": "string"
-          },
-          "length": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "mimeType": {
-            "type": "string"
-          },
-          "fileName": {
-            "type": "string"
-          },
-          "digest": {
-            "type": "string"
-          },
-          "repositoryId": {
-            "type": "string"
-          }
-        }
-      }
+    "numItems": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "hasMoreItems": {
+      "type": "boolean"
+    },
+    "totalNumItems": {
+      "type": "integer",
+      "format": "int64"
     }
   },
   "example": {
@@ -276,15 +275,14 @@ multipart/form-data
           }
         ]
       }
-    ]
+    ],
+    "numItems": 1,
+    "hasMoreItems": false,
+    "totalNumItems": 1
   }
 }
 ```
 
-## 401 Unauthorized
+### Code samples
 
-### Unauthorized
-
-Code example
-
-[Mulitpart-body post request](./Post-to-yuuvis.html)
+[Search documents by search query](./Search-to-yuuvis.html)
