@@ -349,4 +349,4 @@ The updated index data is passed as JSON structure in the body as follows
 
 
 ### Code samples
-[](./)
+[Update document index data by ID](./Update-index-data-to-yuuivs.html)
