@@ -1,8 +1,11 @@
-#yuuvis® Ultimate
-###API change history
+# yuuvis® Ultimate
+
+### API change history
+
 **yuuvis® Ultimate** is the ultimate freedom to innovate. Get access to the latest API endpoints as the yuuvis® development team releases them on its journey to aPaas.
 
-##Store one or more documents
+## Store one or more documents
+
 The **"Store one or more documents"** endpoint requires a multipart body with an index data parameter as well as a binary content parameter.
 
 Save your index data as file (e.g. metadata.json) and use it for the data parameter. For the binary content, the cid_63apple parameter, you can use any file you'd like to store. Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
@@ -10,6 +13,7 @@ Save your index data as file (e.g. metadata.json) and use it for the data parame
 If the request is successful, the index data of the previously stored document will be returned in JSON format.
 
 Index Data Example, JSON Format
+
 ```
 {`
  ` ` ` ` `"objects": [{`
@@ -29,22 +33,25 @@ Index Data Example, JSON Format
  ```
 How to ...
 
-##Request
-###Request URL
-https://yuuvis.azure-api.net/dms/objects[?data][&cid_63apple]
+## Request
 
-##Request parameters
+### Request URL
+
+https://yuuvis.azure-api.net/dms/objects[?data][&cid_63apple]
+ 
+## Request parameters
 
 ```
     -data (optional)                File
     ------------------------------------
     -cid_63apple (optional)         File
 ```
-##Request headers
+## Request headers
+
 Content-Type (optional) string Media type of the body sent to the API.
 Ocp-Apim-Subscription-Key string Subscription key which provides access to this API. Found in your Profile.
 
-##Request body
+## Request body
 
 ```
 -**data** \*required\
@@ -61,14 +68,16 @@ Note: Make sure the `cid_63apple` ID is referenced in the corresponding index da
 
 multipart/form-data
 
-##Responses
-###200 OK
-###OK
+## Responses
 
-##Representations
+### 200 OK
+
+### OK
+
+## Representations
 
 
-###sample
+### sample
 ```
 
 {
@@ -124,7 +133,8 @@ multipart/form-data
   ]
 }
 ```
-###Schema
+### Schema
+
 ```
 {
   "title": "Import Object Response",
@@ -271,8 +281,10 @@ multipart/form-data
 }
 ```
 
-##401 Unauthorized
-###Unauthorized
+## 401 Unauthorized
+
+### Unauthorized
+
 Code example
 
 [Mulitpart-body post request](./Post-to-yuuvis.html)
