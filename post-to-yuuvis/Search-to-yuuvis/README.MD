@@ -92,7 +92,7 @@ A *search query* consists of three parameters:
 
 ## Responses
 
-### 200 OK
+## 200 OK
 
 ### OK
 
@@ -283,6 +283,6 @@ A *search query* consists of three parameters:
 }
 ```
 
-### Code samples
+### Code example
 
 [Search documents by search query](./Search-to-yuuvis.html)

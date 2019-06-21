@@ -70,9 +70,9 @@ multipart/form-data
 
 ## Responses
 
-### 200 OK                         401 Unauthorized
+## 200 OK                         
 
-### OK                             Unauthorized
+### OK                           
 
 
 
@@ -282,7 +282,9 @@ multipart/form-data
   }
 }
 ```
+## 401 Unauthorized
 
+###   Unauthorized
 
 ### Code example
 

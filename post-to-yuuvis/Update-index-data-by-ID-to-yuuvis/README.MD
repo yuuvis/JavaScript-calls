@@ -134,9 +134,9 @@ The updated index data is passed as JSON structure in the body as follows
 
 ## Responses
 
-## 200 OK       404 Not Found
+## 200 OK      
 
-## OK           Not Found
+### OK           
 
 ## Representations
 
@@ -346,7 +346,9 @@ The updated index data is passed as JSON structure in the body as follows
 }
 ```
 
+##  404 Not Found
 
+### Not Found
 
 ### Code samples
 [Update document index data by ID](./Update-index-data-to-yuuivs.html)

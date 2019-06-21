@@ -44,11 +44,11 @@ Ocp-Apim-Subscription-Key           string      Subscription key which provides 
 
 `application/octet-stream`
 
-## Responses        404 Not Found
+## Responses        
 
-## 200 OK           NOT FOUND
+## 200 OK        
 
-## OK
+### OK
 
 ## Representations
 
@@ -257,6 +257,12 @@ Ocp-Apim-Subscription-Key           string      Subscription key which provides 
   }
 }
 ```
+
+## 404 Not Found
+
+### NOT FOUND
+
+
 
 ### Code examples
  

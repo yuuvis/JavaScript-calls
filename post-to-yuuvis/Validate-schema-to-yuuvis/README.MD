@@ -4,24 +4,24 @@
 
 **yuuvis® Ultimate** is the ultimate freedom to innovate. Get access to the latest API endpoints as the yuuvis® development team releases them on its journey to aPaas.
 
-## Update the tenant schema
+## Validate a schema
 
-The **"Update the tenant schema"** endpoint validates your schema first, before it is updated. If the schema is not valid, no update takes place. Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
+The **"Validate a schema"** endpoint validates a schema and returns a list of validation error messages, if any. Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
 
-[Schema definition …](./https://yuuvis.portal.azure-api.net/how-to/schema)
+[Schema definition …](https://yuuvis.portal.azure-api.net/how-to/schema)
 
 ## Request
 
 ### Request URL
 
-https://yuuvis.azure-api.net/admin/schema
+https://yuuvis.azure-api.net/admin/schema/validate
 
 ## Request headers
 
 ```
 Content-Type (optional)             string          Media type of the body sent to the API.
 
--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
 
 Ocp-Apim-Subscription-Key           string          Subscription key which provides access to this API. Found in your Profile.
 
@@ -33,24 +33,22 @@ Ocp-Apim-Subscription-Key           string          Subscription key which provi
 
 ## Responses
 
-## 200 OK
+### 200 OK                          
 
-### OK - Schema is valid
+### OK - The schema is valid.      
 
 ## Representations
 
 `application/json`
 
-
-### Sample
+## Sample
 ```
  {
   "validationErrors": []
 }
-422 Unprocessable Entity
-Unprocessable Entity - Schema not valid
+
 ```
-### Scheam
+## Schema
 ```
 {
   "title": "Validation Error List",
@@ -73,8 +71,11 @@ Unprocessable Entity - Schema not valid
   }
 }
 ```
+## 422 Unprocessable Entity
 
-## Representations
+### Unprocessable Entity - The schema is invalid.
+
+### Representations
 
 `application/json`
 
@@ -91,8 +92,10 @@ Unprocessable Entity - Schema not valid
   ]
 }
 ```
-### Schema
+
+## Schema
 ```
+
 {
   "title": "Validation Error List",
   "type": "object",
@@ -121,9 +124,6 @@ Unprocessable Entity - Schema not valid
   }
 }
 ```
+## Code samples
 
-
-### Code samples
-
-
-[Update the tenant schema](./Update-tenant-schema-to-yuuivs.html)
+[Validate a schema](./Validate-schema-to-yuuvis.html)
