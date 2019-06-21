@@ -260,4 +260,5 @@ Ocp-Apim-Subscription-Key           string      Subscription key which provides 
 
 ### Code examples
  
-[Update document content by ID](./Update-to-yuuvus.html)
+[Update document content by ID](./Update-to-yuuvis.html)
+[Update document index data by ID](./Update-index-data-to-yuuivs.html)
