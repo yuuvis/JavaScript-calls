@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+            "data": "{File}",
+            "cid_63apple": "{File}",
+        };      
+
+
+        var formData = new FormData();     
+        var metadataBlob = new Blob([metadataFile],{type:"application/json"});
+        var contentBlob = new Blob([contentFile],{type:"text/plain"});        
+        formData.append('data', metadataBlob, "metadata");
+        formData.append('cid_63apple', contentBlob, "contentdata");
+
+        $.ajax({
+            url: "https://yuuvis.azure-api.net/dms/objects?" + $.param(params),
+            processData: false,
+            contentType: false,
+            cache: false,           
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type","multipart/form-data");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+            },
+            type: "POST",
+
+  
+            data: formData
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+</script>
+</body>
+</html>
