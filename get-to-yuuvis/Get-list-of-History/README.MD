@@ -65,7 +65,6 @@ Ocp-Apim-Subscription-Key           string          Subscription key which provi
 ### Sample
 ```
 
-Schema
  {
   "objects": [
     {
