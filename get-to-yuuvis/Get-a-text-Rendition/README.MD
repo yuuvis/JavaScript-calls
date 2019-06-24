@@ -45,4 +45,4 @@ Ocp-Apim-Subscription-Key           string          Subscription key which provi
 
 ### Code samples
 
-[Get a text rendition](./Get-a-text-rendition.html)
+[Get a text rendition](./Get-a-text-Rendition.html)

@@ -48,4 +48,4 @@ Ocp-Apim-Subscription-Key           string          Subscription key which provi
 
 ### Code example
 
-[Get Validate Content by ID](/.Get-Validate-Content-by-Id-to-yuuvis.html)
+[Get Validate Content by ID](./Get-Validate-Content-by-ID-to-yuuvis.html)
