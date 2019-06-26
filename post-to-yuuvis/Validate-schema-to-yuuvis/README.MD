@@ -2,6 +2,8 @@
 
 ### API change history
 
+[Documentation](https://yuuvis.portal.azure-api.net/how-to)
+
 **yuuvis® Ultimate** is the ultimate freedom to innovate. Get access to the latest API endpoints as the yuuvis® development team releases them on its journey to aPaas.
 
 ## Validate a schema
