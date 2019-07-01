@@ -12,7 +12,7 @@ Already imported documents using the "Store one or more documents" endpoint can 
 The **"Delete document by ID"** endpoint offers the functionality to delete the document (object) that matches the given objectId parameter.
 
 
-[How to ...](https://yuuvis.portal.azure-api.net/how-to/delete)
+[Read about Deleting Documents with the yuuvis® API](https://yuuvis.portal.azure-api.net/how-to/delete)
 
 ## Request
 

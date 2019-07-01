@@ -10,7 +10,7 @@
 
 The **"Get a list of history entries by ID"** endpoint retrieves information about the actions and modifications that have been carried out for the given document (object) - objectId parameter. Each action or modification is stored in a separate history entry.
 
-[How to ...](https://yuuvis.portal.azure-api.net/how-to/retrieve_hist)
+[Read about Retrieving the History Entries of a Document with the yuuvis® API](https://yuuvis.portal.azure-api.net/how-to/retrieve_hist)
 
 
 ## Meaning of field values

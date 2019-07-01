@@ -12,7 +12,7 @@ The **"Get document content by ID"** endpoint returns the original content file 
 
 
 
-[How to ...](https://yuuvis.portal.azure-api.net/how-to/retrieve)
+[Read about Retrieving Documents with the yuuvis® API](https://yuuvis.portal.azure-api.net/how-to/retrieve)
 
 ## Request
 

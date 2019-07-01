@@ -10,7 +10,7 @@
 
 The **"Get the raw tenant schema"** endpoint returns the raw schema of the tenant (XML) belonging to you as the logged on user.
 
-[Schema definition ...](https://yuuvis.portal.azure-api.net/how-to/schema)
+[Learn about yuuvis® API schemas](https://yuuvis.portal.azure-api.net/how-to/schema)
 
 ## Request
 

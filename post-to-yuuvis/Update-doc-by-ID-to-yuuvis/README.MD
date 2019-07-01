@@ -12,7 +12,7 @@ The **"Update document content by ID"** endpoint updates the content file of the
 
 You can name the content by passing the file name over to the Content-Disposition header. Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
 
-[How to ...](https://yuuvis.portal.azure-api.net/how-to/update)
+[Read about Updating Documents with the yuuvis® API](https://yuuvis.portal.azure-api.net/how-to/update)
 
 ## Request
 

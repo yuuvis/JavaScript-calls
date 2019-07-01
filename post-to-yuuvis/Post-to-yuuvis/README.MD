@@ -33,7 +33,7 @@ Index Data Example, JSON Format
  ` ` ` ` `}]`
  `}
  ```
-How to ...
+[Read about Storing Documents with the yuuvis® API](https://yuuvis.portal.azure-api.net/how-to/import?fbclid=IwAR0fxBX006rnFUmf2Ghs7mAEwsAmxv-KiouyHXGmED8BvXBktWL6JzlHGE4)
 
 ## Request
 

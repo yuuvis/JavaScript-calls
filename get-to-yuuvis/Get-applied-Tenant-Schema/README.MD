@@ -10,7 +10,7 @@
 
 The **"Get the applied tenant schema"** endpoint returns the applied schema of the tenant (JSON / XML) belonging to you as the logged on user. The applied schema is the tenant schema, enhanced by the global schema and the system properties.
 
-[Schema definition ...](https://yuuvis.portal.azure-api.net/how-to/schema)
+[Learn about yuuvis® API schemas](https://yuuvis.portal.azure-api.net/how-to/schema)
 
 ## Request
 

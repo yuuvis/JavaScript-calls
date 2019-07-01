@@ -10,7 +10,7 @@
 
 The **"Validate a schema"** endpoint validates a schema and returns a list of validation error messages, if any. Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
 
-[Schema definition …](https://yuuvis.portal.azure-api.net/how-to/schema)
+[Learn about yuuvis® API schemas](https://yuuvis.portal.azure-api.net/how-to/schema)
 
 ## Request
 

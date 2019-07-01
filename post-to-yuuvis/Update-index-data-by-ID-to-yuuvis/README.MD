@@ -14,7 +14,7 @@ To update the index data send the request with the new index data as request bod
 Most of the system properties cannot be updated or are updated automatically. If the new index data contains these properties, their values must match the values of the current version. Hence you can retrieve the current index data using the “GET document index data by ID“ endpoint first, to use the result. Edit some properties and post it again using this endpoint.
 Note that the "Try it" button is not available for this endpoint. You have to try it out externally. Use the provided code samples as a starting point.
 
-[How to ...](https://yuuvis.portal.azure-api.net/how-to/update)
+[Read about Updating Documents with the yuuvis® API](https://yuuvis.portal.azure-api.net/how-to/update)
 
 ## Request
 

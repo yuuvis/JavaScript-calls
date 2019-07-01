@@ -12,7 +12,7 @@ The **"Search documents by search query"** endpoint requires a JSON body contain
 
 The search parameters skipCount and maxItems allow paging for search queries, whereby maxItems defines the maximum number of entries in the hit list and skipCount the maximum number of entries to be skipped.
 
-[CMIS-Based Query Language](https://yuuvis.portal.azure-api.net/how-to/CMIS)
+[Learn about the yuuvis® CMIS-Based Query Language](https://yuuvis.portal.azure-api.net/how-to/CMIS)
 
 ## Request
 
