@@ -6,16 +6,28 @@
 </head>
 <body>
 
+    Query: <input type="file" value="query" onchange="loadFile(event)"><br>
+    <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
-    $(function() {
-        var params = {
-            // Request parameters
-        };      
 
-        var requestBody = "{body}";
+    var queryJson = '';
+
+    loadFile = function(event){
+      var input = event.target;
+      var reader = new FileReader();
+      reader.onload = function() {
+        queryJson = reader.result;
+      }
+      reader.readAsText($('input[type=file]')[0].files[0]);
+    }
+
+    upload = function() {
+ 
+
+        var formData = queryJson;
 
         $.ajax({
-            url: "https://yuuvis.azure-api.net/dms/objects/search?" + $.param(params),
+            url: "https://api.yuuvis.io/dms/objects/search",
             processData: false,
             contentType: false,
             cache: false,           
@@ -26,15 +38,16 @@
             },
             type: "POST",
 
-            data: JSON.stringify(requestBody)
+            data: formData
         })
         .done(function(data) {
             alert("success");
+            console.log(data);
         })
         .fail(function() {
             alert("error");
         });
-    });
+    };
 </script>
 </body>
 </html>

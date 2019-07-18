@@ -6,40 +6,41 @@
 </head>
 <body>
 
+    Content: <input type="file" value="contentdata" ><br>
+    <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
-    $(function() {
-        var params = {
-            // Request parameters
-        };      
+
+
+    upload = function() {
+ 
 
 
         var formData = new FormData();
-        var contentBlob = new Blob([contentFile],{type:"text/plain"});
+        var contentBlob = new Blob([$('input[type=file]')[0].files[0]],{type:"text/plain"});        
         formData.append('file', contentBlob);    
 
         $.ajax({
-            url: "https://yuuvis.azure-api.net/dms/objects/{objectId}/contents/file?" + $.param(params),
+            url: "https://api.yuuvis.io/dms/objects/{objectId}/contents/file",
             processData: false,
             contentType: false,
             cache: false,           
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Disposition","");
-                xhrObj.setRequestHeader("Content-Type","application/octet-stream");
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
             },
             type: "POST",
 
-  
             data: formData
         })
         .done(function(data) {
             alert("success");
+            console.log(data);
         })
         .fail(function() {
             alert("error");
         });
-    });
+    };
 </script>
 </body>
 </html>
