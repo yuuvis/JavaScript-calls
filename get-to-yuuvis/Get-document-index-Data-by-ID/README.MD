@@ -2,8 +2,7 @@
 
 ### API change history
 
-[Documentation](https://api.yuuvis.io/how-to)
-
+[Documentation](https://yuuvis.io/how-to)
 
 ## Get document index data by ID
 
