@@ -1,2 +1,2 @@
 # javascript-calls
-This houses that yuuvis API calls related to Javascript
+This houses that yuuvis® API calls related to Javascript
