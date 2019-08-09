@@ -1,10 +1,9 @@
 const request = require('request');
-const fs = require('fs');
 
 var key = ""
 var baseUrl = "https://api.yuuvis.io/"
 
-function createAppliedSchemaRequest(objectId) {
+function createAppliedSchemaRequest() {
   return{
     method: 'GET',
     uri: baseUrl + 'dms/schema/native',
@@ -25,5 +24,5 @@ function executeRequest(request_object){
   })
 }
 
-var simpleSearchRequest = createAppliedSchemaRequest(oid)
+var simpleSearchRequest = createAppliedSchemaRequest()
 executeRequest(simpleSearchRequest)

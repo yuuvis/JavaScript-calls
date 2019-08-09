@@ -1,5 +1,4 @@
 const request = require('request');
-const fs = require('fs');
 
 var key = ""
 var baseUrl = "https://api.yuuvis.io/"
