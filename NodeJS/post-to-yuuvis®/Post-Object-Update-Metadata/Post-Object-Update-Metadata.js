@@ -10,7 +10,7 @@ var new_metadata = "metadata.json"
 function createUpdateRequest(doc_id, doc_newFile) {
   return{
     method: 'POST',
-    uri: baseUrl + 'dms/objects/' + doc_id + '/contents/file',
+    uri: baseUrl + 'dms/objects/' + doc_id,
     headers: {
       'Accept': 'application/json',
       'Ocp-Apim-Subscription-Key': key,
