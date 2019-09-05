@@ -1,73 +1,103 @@
 # Core Capabilities (CRUD)
 
-## Store one or more documents
+## Search documents by search query
 
-The **"Store one or more documents"** endpoint requires a multipart body with an index data parameter as well as a binary content parameter.
+The **"Search documents by search query"** endpoint requires a JSON body containing your search query.
 
-Save your metadata as file (e.g. metadata.json) and use it for the data parameter. For the binary content, the cid_63apple parameter, you can use any file you'd like to store.
-
-If the request is successful, the index data of the previously stored document will be returned in JSON format.
-
-[Read about Storing Documents with the yuuvis® API](https://yuuvis.io/how-to/import)
+The search parameters skipCount and maxItems allow paging for search queries, whereby maxItems defines the maximum number of entries in the hit list and skipCount the maximum number of entries to be skipped.
 
 
-### Request URL
+[Learn about the yuuvis® CMIS-Based Query Language](https://yuuvis.io/how-to/CMIS)
 
-https://api.yuuvis.io/dms/objects
+## Request URL
+
+https://api.yuuvis.io/dms/objects/search
 
 ## Request headers
 
-Content-Type (optional) string Media type of the body sent to the API.
-Ocp-Apim-Subscription-Key string Subscription key which provides access to this API. Found in your Profile.
- Request body
-
-This endpoint takes in either a multipart/form-data body or a single metadata JSON file. The latter is only permissable if the DocumentType referenced in the metadata file allows for missing content.
+```
+Content-Type (optional)         string      Media type of the body sent to the API.
+----------------------------------------------------------------------------------------------------------------------
+Ocp-Apim-Subscription-Key       string      Subscription key which provides access to this API. Found in your Profile.
 
 ```
--**data** *required
-string ($binary)
-yuuvis® metadata for the document (object) to be imported as JSON file
+## Request body
 
--**cid_63apple** *optional depending on schema
-string ($binary)
-document (object) itself to be imported as binary file
-```
+A *search query* consists of three parameters:
 
-Note: Make sure the CID `cid_63apple` matches the contentStreamID referenced in the posted metadata data
+- **statement** - the SELECT statement (CMIS-Based Query Language)
+- **skipCount** - defines the maximum number of entries to be skipped (for paging)
+-  **maxItems** - defines the maximum number of entries in the hit list
 
-Metadata Example, JSON Format
+
+`application/json`
+
+### Sample
 
 ```
 {
-  "objects": [{
-      "properties": {
-          "enaio:objectTypeId": {
-                "value": "document"
-          },
-          "Name": {
-                "value": "my document"
-          }
-      },
-      "contentStreams": [{
-            "cid": "cid_63apple"
-      }]
-  }]
+  "query": {
+    "statement": "SELECT * FROM enaio:object",
+    "skipCount": 0,
+    "maxItems": 50
+  }
 }
- ```
+```
+
+### Schema
+```
+ {
+  "title": "Search Request",
+  "required": [
+    "query"
+  ],
+  "type": "object",
+  "properties": {
+    "query": {
+      "required": [
+        "maxItems",
+        "skipCount",
+        "statement"
+      ],
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "skipCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxItems": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  },
+  "example": {
+    "query": {
+      "statement": "SELECT * FROM enaio:object",
+      "skipCount": 0,
+      "maxItems": 50
+    }
+  }
+}
+```
 
 ## Responses
 
-## 200 OK                         
+## 200 OK
 
-### OK                           
+### OK
 
 ## Representations
 
+`application/json`
 
-### sample
+### Sample
 ```
-
-{
+ {
   "objects": [
     {
       "properties": {
@@ -117,16 +147,22 @@ Metadata Example, JSON Format
         }
       ]
     }
-  ]
+  ],
+  "numItems": 1,
+  "hasMoreItems": false,
+  "totalNumItems": 1
 }
 ```
 ### Schema
 
 ```
 {
-  "title": "Import Object Response",
+  "title": "Search Response Object",
   "required": [
-    "objects"
+    "hasMoreItems",
+    "numItems",
+    "objects",
+    "totalNumItems"
   ],
   "type": "object",
   "properties": {
@@ -172,45 +208,16 @@ Metadata Example, JSON Format
         }
       }
     },
-    "contentStreams": {
-      "type": "array",
-      "items": {
-        "title": "Content Stream Object",
-        "required": [
-          "archivePath",
-          "contentStreamId",
-          "digest",
-          "fileName",
-          "length",
-          "mimeType",
-          "repositoryId"
-        ],
-        "type": "object",
-        "properties": {
-          "contentStreamId": {
-            "type": "string"
-          },
-          "archivePath": {
-            "type": "string"
-          },
-          "length": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "mimeType": {
-            "type": "string"
-          },
-          "fileName": {
-            "type": "string"
-          },
-          "digest": {
-            "type": "string"
-          },
-          "repositoryId": {
-            "type": "string"
-          }
-        }
-      }
+    "numItems": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "hasMoreItems": {
+      "type": "boolean"
+    },
+    "totalNumItems": {
+      "type": "integer",
+      "format": "int64"
     }
   },
   "example": {
@@ -263,14 +270,14 @@ Metadata Example, JSON Format
           }
         ]
       }
-    ]
+    ],
+    "numItems": 1,
+    "hasMoreItems": false,
+    "totalNumItems": 1
   }
 }
 ```
-## 401 Unauthorized
-
-###   Unauthorized
 
 ### Code example
 
-[Mulitpart-body post request](./Post-Object.html)
+[Search documents by search query](./Post-Search-Query.html)

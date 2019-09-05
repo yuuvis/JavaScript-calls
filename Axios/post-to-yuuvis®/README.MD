@@ -23,6 +23,8 @@ Ocp-Apim-Subscription-Key string Subscription key which provides access to this 
 
 This endpoint takes in either a multipart/form-data body or a single metadata JSON file. The latter is only permissable if the DocumentType referenced in the metadata file allows for missing content.
 
+As Axios lacks support for multipart/form-data POST requests, importing an object containing a content file is done by using this endpoint to import the metadata first, and updating the content onto the object afterward. To accomplish this, we extract the value of the enaio:objectId property from the response of our metadata import, and use it to create the update URI.  
+
 ```
 -**data** *required
 string ($binary)

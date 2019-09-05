@@ -1,73 +1,50 @@
 # Core Capabilities (CRUD)
 
-## Store one or more documents
+## Update document content by ID
 
-The **"Store one or more documents"** endpoint requires a multipart body with an index data parameter as well as a binary content parameter.
+The **"Update document content by ID"** endpoint updates the content file of the document (object) that matches the objectId parameter. You can name the content by passing the file name over to the Content-Disposition header. 
 
-Save your metadata as file (e.g. metadata.json) and use it for the data parameter. For the binary content, the cid_63apple parameter, you can use any file you'd like to store.
 
-If the request is successful, the index data of the previously stored document will be returned in JSON format.
-
-[Read about Storing Documents with the yuuvis® API](https://yuuvis.io/how-to/import)
-
+[Read about Updating Documents with the yuuvis® API](https://yuuvis.io/how-to/update)
 
 ### Request URL
 
-https://api.yuuvis.io/dms/objects
+https://api.yuuvis.io/dms/objects/{objectId}/contents/file
+
 
 ## Request headers
 
-Content-Type (optional) string Media type of the body sent to the API.
-Ocp-Apim-Subscription-Key string Subscription key which provides access to this API. Found in your Profile.
- Request body
+```
+Content-Disposition                 string      format: attachment;filename=myfilename
 
-This endpoint takes in either a multipart/form-data body or a single metadata JSON file. The latter is only permissable if the DocumentType referenced in the metadata file allows for missing content.
+--------------------------------------------------------------------------------------------------------------------------------
+
+Content-Type (optional)             string      Media type of the body sent to the API.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Ocp-Apim-Subscription-Key           string      Subscription key which provides access to this API. Found in your Profile.
 
 ```
--**data** *required
-string ($binary)
-yuuvis® metadata for the document (object) to be imported as JSON file
 
--**cid_63apple** *optional depending on schema
-string ($binary)
-document (object) itself to be imported as binary file
-```
+## Request body
 
-Note: Make sure the CID `cid_63apple` matches the contentStreamID referenced in the posted metadata data
+`application/octet-stream`
 
-Metadata Example, JSON Format
+## Responses        
 
-```
-{
-  "objects": [{
-      "properties": {
-          "enaio:objectTypeId": {
-                "value": "document"
-          },
-          "Name": {
-                "value": "my document"
-          }
-      },
-      "contentStreams": [{
-            "cid": "cid_63apple"
-      }]
-  }]
-}
- ```
+## 200 OK        
 
-## Responses
-
-## 200 OK                         
-
-### OK                           
+### OK
 
 ## Representations
 
+`application/json`
 
-### sample
+### Sample
 ```
 
-{
+ {
   "objects": [
     {
       "properties": {
@@ -93,7 +70,7 @@ Metadata Example, JSON Format
           "value": "2019-03-20T13:34:20.15Z"
         },
         "enaio:versionNumber": {
-          "value": 1
+          "value": 2
         },
         "enaio:tenant": {
           "value": "heckathon"
@@ -102,7 +79,7 @@ Metadata Example, JSON Format
           "value": "49749ababad604f3"
         },
         "Name": {
-          "value": "my document"
+          "value": "Update Email"
         }
       },
       "contentStreams": [
@@ -120,11 +97,11 @@ Metadata Example, JSON Format
   ]
 }
 ```
-### Schema
+### Scheam
 
 ```
 {
-  "title": "Import Object Response",
+  "title": "Update Metadata Response",
   "required": [
     "objects"
   ],
@@ -239,7 +216,7 @@ Metadata Example, JSON Format
             "value": "2019-03-20T13:34:20.15Z"
           },
           "enaio:versionNumber": {
-            "value": 1
+            "value": 2
           },
           "enaio:tenant": {
             "value": "heckathon"
@@ -248,7 +225,7 @@ Metadata Example, JSON Format
             "value": "49749ababad604f3"
           },
           "Name": {
-            "value": "my document"
+            "value": "Update Email"
           }
         },
         "contentStreams": [
@@ -267,10 +244,13 @@ Metadata Example, JSON Format
   }
 }
 ```
-## 401 Unauthorized
 
-###   Unauthorized
+## 404 Not Found
 
-### Code example
+### NOT FOUND
 
-[Mulitpart-body post request](./Post-Object.html)
+
+
+### Code examples
+
+[Update document content by ID](./Post-Object-Update-Content.html)
