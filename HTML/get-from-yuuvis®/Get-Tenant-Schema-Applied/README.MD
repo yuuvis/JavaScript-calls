@@ -1,24 +1,15 @@
 # Core Capabilities (CRUD)
 
-### API change history
-
-[Documentation](https://yuuvis.io/how-to)
-
-
 ## Get the applied tenant schema
 
 The **"Get the applied tenant schema"** endpoint returns the applied schema of the tenant (JSON / XML) belonging to you as the logged on user. The applied schema is the tenant schema, enhanced by the global schema and the system properties.
 
+
 [Learn about yuuvis® API schemas](https://yuuvis.io/how-to/schema)
-
-[Try It](https://yuuvis.io/docs/services/yuuvis-dms-core/operations/get-dms-schema-native/console)
-
-## Request
 
 ## Request URL
 
 https://api.yuuvis.io/dms/schema/native
-
 
 ## Request headers
 
