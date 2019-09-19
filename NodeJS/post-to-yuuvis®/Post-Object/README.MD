@@ -274,3 +274,5 @@ Metadata Example, JSON Format
 ### Code example
 
 [Mulitpart-body post request](./Post-Object.html)
+
+[Learn more about Import Requests](https://github.com/yuuvis/Documentation/wiki/Import-and-store#ImportingDocumentsviaCoreAPI-ImportaSingleDocument)
