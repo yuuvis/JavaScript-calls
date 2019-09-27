@@ -1,14 +1,14 @@
-### Request URL
+## Request URL
 
-https://api.yuuvis.io/admin/schema/
+https://api.yuuvis.io/dms/objects/{objectId}
 
 ## Request headers
 
 | Header                    | Type   | Meaning                                                                                             |
 |---------------------------|--------|-----------------------------------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | String | Subscription key which provides access to the API. Found on the Subscriptions page of your account. |
-| Content-Type  | String | application/xml |
+                    
 
-[Documentation: Update your schema](https://github.com/yuuvis/Documentation/wiki/Schema-definition#validate-your-schema)
+[Documentation: Delete document by object ID](https://github.com/yuuvis/Documentation/wiki/Delete-documents#deleting-a-document)
 
-[Try out the endpoint in our developer portal](https://ateamk8s.azurewebsites.net/Apis/Endpoints/admin-api)
+[Try out the endpoint in our developer portal](https://ateamk8s.azurewebsites.net/Apis/Endpoints/yadb-api)

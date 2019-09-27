@@ -1,5 +1,5 @@
 # javascript-calls
-This houses the yuuvis® API calls written using various Javascript libraries.
+Here you will find code examples for the yuuvis® API calls written using various Javascript libraries.
 
 Recommended: HTML, NodeJS
-Limited Functionality: Axios, Fetch
+Limited Functionality due to missing binary multipart body support: Axios, Fetch
