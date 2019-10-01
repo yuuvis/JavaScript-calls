@@ -1,6 +1,6 @@
-### Request URL
+## Request URL
 
-https://api.yuuvis.io/dms/objects
+https://api.yuuvis.io/dms/objects/{objectId}
 
 ## Request headers
 
@@ -8,6 +8,7 @@ https://api.yuuvis.io/dms/objects
 |---------------------------|--------|-----------------------------------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | String | Subscription key which provides access to the API. Found on the Subscriptions page of your account. |
 
-[Documentation: Importing and storing a single document](https://github.com/yuuvis/Documentation/wiki/Import-and-store#importing-and-storing-a-single-document)
 
-[Try out the endpoint in our developer portal](https://ateamk8s.azurewebsites.net/Apis/Endpoints/yadb-api)
+&rarr; [Documentation: Delete document by object ID](https://github.com/yuuvis/Documentation/wiki/Delete-documents#DeletingDocumentsviaCoreAPI-DeleteaDocument)
+
+&rarr; [Try out the endpoint in our developer portal](https://yuuvis.io/Apis/Endpoints/dms-core-api)

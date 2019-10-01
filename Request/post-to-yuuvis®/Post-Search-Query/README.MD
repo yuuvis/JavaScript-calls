@@ -1,14 +1,13 @@
-### Request URL
-
-https://api.yuuvis.io/admin/schema/validate
+## Request URL
+https://api.yuuvis.io/dms/objects/search
 
 ## Request headers
-
 | Header                    | Type   | Meaning                                                                                             |
 |---------------------------|--------|-----------------------------------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | String | Subscription key which provides access to the API. Found on the Subscriptions page of your account. |
-| Content-Type  | String | application/xml |
 
-[Documentation: Validate a schema](https://github.com/yuuvis/Documentation/wiki/Schema-definition#validate-your-schema)
+&rarr; [Documentation: Retrieving Documents via Search Endpoint](https://github.com/yuuvis/Documentation/wiki/Retrieve-documents#RetrievingDocumentsviaCoreAPI-RetrievingDocumentsviaSearchEndpoint)
 
-[Try out the endpoint in our developer portal](https://ateamk8s.azurewebsites.net/Apis/Endpoints/admin-api)
+&rarr; [Learn about the yuuvis® CMIS-Based Query Language](https://github.com/yuuvis/Documentation/wiki/Query-language)
+
+&rarr; [Try out the endpoint in our developer portal](https://yuuvis.io/Apis/Endpoints/dms-core-api)
