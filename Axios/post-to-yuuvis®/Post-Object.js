@@ -1,44 +1,40 @@
-const fs = require('fs');
-const axios = require('axios');
+const fs = require("fs");
+const axios = require("axios");
 
-var key = "your API key here"
-var baseUrl = "https://api.yuuvis.io/"
-var oid = ""
+const key = "";
+const baseUrl = "https://ateamk8s.azure-api.net/";
 
-var headersImport = {
-  'Content-Type': 'application/json',
-  'Ocp-Apim-Subscription-Key': key
+const headersImport = {
+    "Content-Type": "application/json",
+    "Ocp-Apim-Subscription-Key": key
+};
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
-function sleep(miliseconds) {
-  var currentTime = new Date().getTime();
-  while (currentTime + miliseconds >= new Date().getTime()) {
-  }
-}
-var metadataBody = fs.createReadStream("metadata.json")
 
-axios.post(baseUrl + 'dms/objects', metadataBody, {headers: headersImport})
-.then((response) => {
-  console.log(response)
-  oid = response.data.objects[0].properties['enaio:objectId'].value
+const metadataBody = fs.createReadStream("metadata.json");
 
-sleep(1000);
-console.log('look here',response.data.objects[0].properties)
-  var contentBody = fs.createReadStream("text.txt")
-  var headersContentUpdate = {
-    'Ocp-Apim-Subscription-Key': key,
-    'Content-Disposition': 'attachment; filename="text.txt"'
-  }
-  var contentUpdateURL = baseUrl+'dms/objects/'+oid+'/contents/file'
+(async() => {
+    try {
+        const response = await axios.post(baseUrl + "dms-core/objects", metadataBody, { headers: headersImport });
+        console.log(response.status);
+        const oid = response.data.objects[0].properties["enaio:objectId"].value;
 
-  axios.post(contentUpdateURL, contentBody, {headers: headersContentUpdate})
-  .then((response) =>{
-    console.log(response)
-  }).catch((error) =>{
-    console.log(error)
-  })
+        console.log("look here", response.data.objects[0].properties);
+        await sleep(1000);
+        const contentBody = fs.createReadStream("text.txt");
+        const headersContentUpdate = {
+            "Ocp-Apim-Subscription-Key": key,
+            "Content-Disposition": "attachment; filename=\"text.txt\""
+        };
+        const contentUpdateURL = baseUrl + "dms-core/objects/" + oid + "/contents/file";
 
- 
+        const postResponse = await axios.post(contentUpdateURL, contentBody, { headers: headersContentUpdate });
+        console.log(postResponse.status);
+        console.log(postResponse.data);
+    } catch (error) {
+        console.log(error);
+    }
+})();
 
-}).catch(error =>{
-  console.log(error)
-})

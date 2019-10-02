@@ -1,14 +1,14 @@
 const request = require('request');
 
 var key = ""
-var baseUrl = "https://api.yuuvis.io/"
-var oid = ""
+var baseUrl = "https://ateamk8s.azure-api.net/"
+const oid = "";
 
 
 function createRenditionTextRequest(objectId) {
   return{
     method: 'GET',
-    uri: baseUrl + 'dms/objects/' + objectId +'/contents/renditions/text',
+    uri: baseUrl + 'dms-view/objects/' + objectId +'/contents/renditions/text',
     headers: {
       'Ocp-Apim-Subscription-Key': key
     }

@@ -1,18 +1,15 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
-var key = "your API key here"
-var baseUrl = "https://api.yuuvis.io/" 
-var objectId = "your Object ID here"
+const key = "your API key here";
+const baseUrl = "https://ateamk8s.azure-api.net/";
+const objectId = "your Object ID here";
 
-
-fetch(baseUrl + "dms/objects/"+ objectId + "/contents/file",{
-headers: {
-      'Ocp-Apim-Subscription-Key': key
-  }
-}) 
-    .then(function(response) {
-  // handle HTTP response
-  console.log('cat', response)
-}, function(error) {
-  // handle network error
-})
+fetch(baseUrl + "dms-core/objects/" + objectId + "/contents/file", {
+    headers: {
+        "Ocp-Apim-Subscription-Key": key
+    }
+}).then(response => {
+    console.log(response);
+}).catch(error => {
+    console.log(error);
+});

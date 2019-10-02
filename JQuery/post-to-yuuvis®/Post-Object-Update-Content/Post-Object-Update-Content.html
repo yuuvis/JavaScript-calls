@@ -9,35 +9,28 @@
     Content: <input type="file" value="contentdata" ><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
-
-
-    upload = function() {
- 
-
-
-        var formData = new FormData();
-        var contentBlob = new Blob([$('input[type=file]')[0].files[0]],{type:"text/plain"});        
-        formData.append('file', contentBlob);    
+    function upload() {
+        const formData = new FormData();
+        const contentBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "text/plain" });
+        formData.append("file", contentBlob);
 
         $.ajax({
-            url: "https://api.yuuvis.io/dms/objects/{objectId}/contents/file",
+            url: "https://ateamk8s.azure-api.net/dms-core/objects/{objectId}/contents/file",
             processData: false,
             contentType: false,
-            cache: false,           
-            beforeSend: function(xhrObj){
+            cache: false,
+            beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Content-Disposition","");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+                xhrObj.setRequestHeader("Content-Disposition", "");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
             },
             type: "POST",
 
             data: formData
-        })
-        .done(function(data) {
+        }).done(function(data) {
             alert("success");
             console.log(data);
-        })
-        .fail(function() {
+        }).fail(function() {
             alert("error");
         });
     };

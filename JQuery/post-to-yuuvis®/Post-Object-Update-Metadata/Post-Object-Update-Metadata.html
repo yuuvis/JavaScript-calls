@@ -9,41 +9,37 @@
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
 
-    var metadataJson = '';
+    const metadataJson = "";
 
-    loadFile = function(event){
-      var input = event.target;
-      var reader = new FileReader();
-      reader.onload = function() {
-        metadataJson = reader.result;
-      }
-      reader.readAsText($('input[type=file]')[0].files[0]);
-    }
+    loadFile = function(event) {
+        const input = event.target;
+        const reader = new FileReader();
+        reader.onload = function() {
+            metadataJson = reader.result;
+        };
+        reader.readAsText($("input[type=file]")[0].files[0]);
+    };
 
-    upload = function() {
- 
-
-        var formData = metadataJson; 
+    function upload() {
+        const formData = metadataJson;
 
         $.ajax({
-            url: "https://api.yuuvis.io/dms/objects/{objectId}",
+            url: "https://ateamk8s.azure-api.net/dms-core/objects/{objectId}",
             processData: false,
             contentType: false,
-            cache: false,           
-            beforeSend: function(xhrObj){
+            cache: false,
+            beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Content-Type","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+                xhrObj.setRequestHeader("Content-Type", "application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
             },
             type: "POST",
 
             data: formData
-        })
-        .done(function(data) {
+        }).done(function(data) {
             alert("success");
             console.log(data);
-        })
-        .fail(function() {
+        }).fail(function() {
             alert("error");
         });
     };

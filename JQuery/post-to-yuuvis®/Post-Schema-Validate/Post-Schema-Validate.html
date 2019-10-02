@@ -7,33 +7,27 @@
 <body>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
-
-
-    upload = function() {
- 
-
-        var formData = new FormData();     
-        var schemaBlob = new Blob([$('input[type=file]')[0].files[0]],{type:"application/xml"});
-        formData.append('file', schemaBlob);    
+    function upload() {
+        const formData = new FormData();
+        const schemaBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "application/xml" });
+        formData.append("file", schemaBlob);
 
         $.ajax({
-            url: "https://api.yuuvis.io/admin/schema/validate",
+            url: "https://ateamk8s.azure-api.net/admin/schema/validate",
             processData: false,
             contentType: false,
-            cache: false,           
-            beforeSend: function(xhrObj){
+            cache: false,
+            beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
             },
             type: "POST",
 
             data: formData
-        })
-        .done(function(data) {
+        }).done(function(data) {
             alert("success");
             console.log(data);
-        })
-        .fail(function() {
+        }).fail(function() {
             alert("error");
         });
     };
