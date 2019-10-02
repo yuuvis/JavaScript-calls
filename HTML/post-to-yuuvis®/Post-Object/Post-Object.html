@@ -9,36 +9,29 @@
     Content: <input type="file" value="contentdata"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
-
-
-    upload = function() {
- 
-
-
-        var formData = new FormData();     
-        var metadataBlob = new Blob([$('input[type=file]')[0].files[0]],{type:"application/json"});
-        var contentBlob = new Blob([$('input[type=file]')[1].files[0]],{type:"text/plain"});        
-        formData.append('data', metadataBlob, "metadata");
-        formData.append('cid_63apple', contentBlob, "contentdata");
+    function upload() {
+        const formData = new FormData();
+        const metadataBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "application/json" });
+        const contentBlob = new Blob([$("input[type=file]")[1].files[0]], { type: "text/plain" });
+        formData.append("data", metadataBlob, "metadata");
+        formData.append("cid_63apple", contentBlob, "contentdata");
 
         $.ajax({
-            url: "https://api.yuuvis.io/dms/objects",
+            url: "https://ateamk8s.azure-api.net/dms-core/objects",
             processData: false,
             contentType: false,
-            cache: false,           
-            beforeSend: function(xhrObj){
+            cache: false,
+            beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
             },
             type: "POST",
 
             data: formData
-        })
-        .done(function(data) {
+        }).done(function(data) {
             alert("success");
             console.log(data);
-        })
-        .fail(function() {
+        }).fail(function() {
             alert("error");
         });
     };

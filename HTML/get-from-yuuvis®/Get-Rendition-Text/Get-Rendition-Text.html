@@ -7,26 +7,21 @@
 <body>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
-
-    upload = function() {
- 
-
+    function upload() {
         $.ajax({
-            url: "https://api.yuuvis.io/dms/objects/{objectId}/contents/renditions/text",
+            url: "https://ateamk8s.azure-api.net/dms-view/objects/{objectId}/contents/renditions/text",
             processData: false,
             contentType: false,
-            cache: false,           
-            beforeSend: function(xhrObj){
+            cache: false,
+            beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
             },
-            type: "GET",
-        })
-        .done(function(data) {
+            type: "GET"
+        }).done(function(data) {
             alert("success");
             console.log(data);
-        })
-        .fail(function() {
+        }).fail(function() {
             alert("error");
         });
     };
