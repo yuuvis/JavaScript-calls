@@ -1,10 +1,10 @@
 const fetch = require("node-fetch");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 const oid = "";
 
-fetch(baseUrl + "dms-core/objects/" + oid, {
+fetch(baseUrl + "/objects/" + oid, {
     method: "delete",
     headers: {
         "Ocp-Apim-Subscription-Key": key

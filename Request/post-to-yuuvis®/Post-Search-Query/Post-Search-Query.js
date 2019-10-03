@@ -1,7 +1,7 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 
 const statement = "SELECT * FROM enaio:object";
 const max_items = 50;
@@ -20,7 +20,7 @@ function createSearchQuery(statement, max_items, skip_items) {
 function createSearchRequest(statement, max_items, skip_items) {
     return {
         method: "POST",
-        uri: baseUrl + "dms/objects/search",
+        uri: baseUrl + "/objects/search",
         headers: {
             "Accept": "application/json",
             "Ocp-Apim-Subscription-Key": key,

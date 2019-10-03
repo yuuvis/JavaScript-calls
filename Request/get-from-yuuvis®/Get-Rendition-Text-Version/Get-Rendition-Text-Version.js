@@ -1,14 +1,14 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-view";
 const oid = ""; //object id
 const vid = ""; //version id
 
 function createRenditionTextRequest(objectId, versionNr) {
     return {
         method: "DELETE",
-        uri: baseUrl + "dms/objects/" + objectId + "/versions/" + versionNr,
+        uri: baseUrl + "/objects/" + objectId + "/versions/" + versionNr,
         headers: {
             "Ocp-Apim-Subscription-Key": key
         }

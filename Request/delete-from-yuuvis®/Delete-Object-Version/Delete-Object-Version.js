@@ -1,14 +1,14 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 const oid = ""; //object id
 const vid = ""; //version id
 
 function createDeleteRequest(objectId, versionNr) {
     return {
         method: "DELETE",
-        uri: baseUrl + "dms-core/objects/" + objectId + "/versions/" + versionNr,
+        uri: baseUrl + "/objects/" + objectId + "/versions/" + versionNr,
         headers: {
             "Ocp-Apim-Subscription-Key": key
         }

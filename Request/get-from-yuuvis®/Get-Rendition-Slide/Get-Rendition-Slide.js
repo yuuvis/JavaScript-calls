@@ -1,13 +1,13 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-view";
 const oid = "";
 
 function createRenditionSlideRequest(objectId) {
     return {
         method: "GET",
-        uri: baseUrl + "dms-view/objects/" + objectId + "/contents/renditions/slide",
+        uri: baseUrl + "/objects/" + objectId + "/contents/renditions/slide",
         headers: {
             "Ocp-Apim-Subscription-Key": key
         }

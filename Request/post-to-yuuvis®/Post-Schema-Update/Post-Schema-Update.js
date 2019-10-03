@@ -2,12 +2,12 @@ const request = require("request");
 const fs = require("fs");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/admin";
 
 function createSchemaUpdateRequest(schema_filename) {
     return {
         method: "POST",
-        uri: baseUrl + "admin/schema",
+        uri: baseUrl + "/schema",
         headers: {
             "Accept": "application/json",
             "Ocp-Apim-Subscription-Key": key,

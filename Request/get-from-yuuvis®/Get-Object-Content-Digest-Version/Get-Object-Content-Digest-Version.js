@@ -1,14 +1,14 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 const oid = "";
 const vid = ""; //version id
 
 function createContentValidateRequest(objectId, versionNr) {
     return {
         method: "GET",
-        uri: baseUrl + "dms-core/objects/" + objectId + "/versions/" + versionNr + "/actions/validate/digest",
+        uri: baseUrl + "/objects/" + objectId + "/versions/" + versionNr + "/actions/validate/digest",
         headers: {
             "Ocp-Apim-Subscription-Key": key
         }

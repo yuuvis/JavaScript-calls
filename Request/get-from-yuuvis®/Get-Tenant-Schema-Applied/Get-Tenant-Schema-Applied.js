@@ -1,12 +1,12 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 
 function createAppliedSchemaRequest() {
     return {
         method: "GET",
-        uri: baseUrl + "dms/schema/native",
+        uri: baseUrl + "/schema/native",
         headers: {
             "Ocp-Apim-Subscription-Key": key,
             "Accept": "application/xml"

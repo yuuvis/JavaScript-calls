@@ -2,7 +2,7 @@ const request = require("request");
 const fs = require("fs");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 
 function createDocumentMetadata(doc_title, doc_fileName, doc_cid, doc_contentType) {
     return {
@@ -47,7 +47,7 @@ function createImportFormdata(doc_title, doc_fileName, doc_cid, doc_contentType)
 function createImportRequest(doc_title, doc_fileName, doc_cid, doc_contentType) {
     return {
         method: "POST",
-        uri: baseUrl + "dms/objects/",
+        uri: baseUrl + "/objects/",
         headers: {
             "Accept": "application/json",
             "Ocp-Apim-Subscription-Key": key

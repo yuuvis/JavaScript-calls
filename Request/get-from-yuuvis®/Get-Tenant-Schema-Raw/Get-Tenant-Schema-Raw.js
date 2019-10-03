@@ -1,12 +1,12 @@
 const request = require("request");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/admin";
 
 function createRawSchemaRequest() {
     return {
         method: "GET",
-        uri: baseUrl + "admin/schema",
+        uri: baseUrl + "/schema",
         headers: {
             "Ocp-Apim-Subscription-Key": key,
             "Accept": "application/xml"

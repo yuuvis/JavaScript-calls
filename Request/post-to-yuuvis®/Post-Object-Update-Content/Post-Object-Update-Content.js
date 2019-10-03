@@ -2,7 +2,7 @@ const request = require("request");
 const fs = require("fs");
 
 const key = "";
-const baseUrl = "https://ateamk8s.azure-api.net/";
+const baseUrl = "https://api.yuuvis.io/dms-core";
 
 const current_doc_id = "";
 const new_content = "test.txt";
@@ -10,7 +10,7 @@ const new_content = "test.txt";
 function createUpdateRequest(doc_id, doc_newFile) {
     return {
         method: "POST",
-        uri: baseUrl + "dms/objects/" + doc_id + "/contents/file",
+        uri: baseUrl + "/objects/" + doc_id + "/contents/file",
         headers: {
             "Accept": "application/json",
             "Ocp-Apim-Subscription-Key": key,
