@@ -9,7 +9,7 @@ function createDocumentMetadata(doc_title, doc_fileName, doc_cid, doc_contentTyp
         "objects": [
             {
                 "properties": {
-                    "enaio:objectTypeId": {
+                    "objectTypeId": {
                         "value": "document"
                     },
                     "Name": {
