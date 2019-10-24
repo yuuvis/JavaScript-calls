@@ -21,7 +21,7 @@ const metadataBody = fs.createReadStream("metadata.json");
         console.log(response.status);
         const oid = response.data.objects[0].properties["enaio:objectId"].value;
 
-        console.log("look here", response.data.objects[0].properties);
+        console.log(response.data.objects[0].properties);
         await sleep(1000);
         const contentBody = fs.createReadStream("text.txt");
         const headersContentUpdate = {

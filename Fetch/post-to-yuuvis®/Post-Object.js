@@ -14,7 +14,7 @@ const optionsImport = {
     method: "POST",
     body: fs.createReadStream("metadata.json"),
     headers: headersImport
-}
+};
 
 (async() => {
     try {
@@ -33,7 +33,7 @@ const optionsImport = {
             body: fs.createReadStream("test.txt"),
             headers: headersContentUpdate
         };
-        console.log(await fetch(baseUrl + "objects/" + oid + "/contents/file", optionsContentUpdate));
+        console.log(await fetch(baseUrl + "/objects/" + oid + "/contents/file", optionsContentUpdate));
     } catch (error) {
         console.log(error);
     }
