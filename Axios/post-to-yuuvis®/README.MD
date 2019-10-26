@@ -2,7 +2,7 @@ To use this import script, you'll have to update your schema with an object type
 
 ## Request URL
 
-https://api.yuuvis.io/dms-core/objects/{objectId}/contents/file
+https://api.yuuvis.io/dms-core/objects
 
 ## Request headers
 
