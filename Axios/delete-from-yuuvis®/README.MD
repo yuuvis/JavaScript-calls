@@ -1,5 +1,5 @@
 ## Request URL
-https://api.yuuvis.io/dms-core/objects
+https://api.yuuvis.io/dms-core/objects/{objectId}
 
 ## Request headers
 | Header                    | Type   | Meaning                                                                                             |
