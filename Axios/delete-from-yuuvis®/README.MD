@@ -6,6 +6,6 @@ https://api.yuuvis.io/dms-core/objects
 |---------------------------|--------|-----------------------------------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | String | Subscription key which provides access to the API. Found on the Subscriptions page of your account. |
 
-&rarr; [Documentation: Deleting a Single Document](https://github.com/yuuvis/Documentation/wiki/Delete-documents)
+&rarr; [Documentation: Deleting a Document By ID](https://github.com/yuuvis/Documentation/wiki/Delete-documents)
 
 &rarr; [Try out the endpoint in our developer portal](https://yuuvis.io/Apis/Endpoints/dms-core-api)
