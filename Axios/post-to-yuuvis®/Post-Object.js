@@ -19,7 +19,7 @@ const metadataBody = fs.createReadStream("metadata.json");
     try {
         const response = await axios.post(baseUrl + "/objects", metadataBody, { headers: headersImport });
         console.log(response.status);
-        const oid = response.data.objects[0].properties["enaio:objectId"].value;
+        const oid = response.data.objects[0].properties["system:objectId"].value;
 
         console.log(response.data.objects[0].properties);
         await sleep(1000);

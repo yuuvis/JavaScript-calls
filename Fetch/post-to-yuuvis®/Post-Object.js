@@ -20,7 +20,7 @@ const optionsImport = {
     try {
         const response = await fetch(baseUrl + "/objects/", optionsImport);
         const data = await response.json();
-        const oid = data.objects[0].properties["enaio:objectId"].value;
+        const oid = data.objects[0].properties["system:objectId"].value;
         console.log("new oid: ", oid);
 
         //Add contentStreamAllowed

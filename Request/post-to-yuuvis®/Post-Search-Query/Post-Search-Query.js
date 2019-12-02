@@ -3,7 +3,7 @@ const request = require("request");
 const key = "";
 const baseUrl = "https://api.yuuvis.io/dms-core";
 
-const statement = "SELECT * FROM enaio:object";
+const statement = "SELECT * FROM system:object";
 const max_items = 50;
 const skip_items = 0;
 

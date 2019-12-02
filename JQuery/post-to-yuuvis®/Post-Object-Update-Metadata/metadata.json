@@ -1,0 +1,15 @@
+{
+    "objects": [{
+        "properties": {
+            "objectTypeId": {
+                "value": "document"
+            },
+            "Name": {
+                "value": "updated attribute"
+            }
+        },
+        "contentStreams": [{
+            "cid": "cid_63apple"
+        }]
+    }]
+}
