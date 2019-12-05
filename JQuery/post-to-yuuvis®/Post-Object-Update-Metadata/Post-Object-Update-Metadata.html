@@ -6,6 +6,7 @@
 </head>
 <body>
     Metadata: <input type="file" value="metadata" onchange="loadFile(event)"><br>
+    ObjectId: <input type="text" value="objectId" id="objectIdInput"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
 
@@ -22,9 +23,10 @@
 
     function upload() {
         const formData = metadataJson;
+        const objectId = document.getElementById("objectIdInput").value
 
         $.ajax({
-            url: "https://api.yuuvis.io/dms-core/objects/{objectId}",
+            url: "https://api.yuuvis.io/dms-core/objects/"+objectId,
             processData: false,
             contentType: false,
             cache: false,
