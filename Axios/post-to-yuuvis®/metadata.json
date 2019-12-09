@@ -1,0 +1,12 @@
+{
+    "objects": [{
+        "properties": {
+            "objectTypeId": {
+                "value": "document"
+            },
+            "Name": {
+                "value": "test import"
+            }
+        }
+    }]
+}

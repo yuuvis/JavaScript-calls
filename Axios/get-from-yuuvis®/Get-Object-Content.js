@@ -1,11 +1,11 @@
 const axios = require("axios");
 
 const key = "your API key here";
-const baseUrl = "https://api.yuuvis.io/dms-core";
+const baseUrl = "https://api.yuuvis.io";
 const objectId = "your Object ID here";
 
 axios.get(
-    baseUrl + "/objects/" + objectId + "/contents/file", {
+    baseUrl + "/dms-core/objects/" + objectId + "/contents/file", {
         headers: {
             "Ocp-Apim-Subscription-Key": key
         }

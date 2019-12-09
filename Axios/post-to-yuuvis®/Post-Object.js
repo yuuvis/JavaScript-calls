@@ -2,7 +2,7 @@ const fs = require("fs");
 const axios = require("axios");
 
 const key = "";
-const baseUrl = "https://api.yuuvis.io/dms-core";
+const baseUrl = "https://api.yuuvis.io/";
 
 const headersImport = {
     "Content-Type": "application/json",
@@ -17,7 +17,7 @@ const metadataBody = fs.createReadStream("metadata.json");
 
 (async() => {
     try {
-        const response = await axios.post(baseUrl + "/objects", metadataBody, { headers: headersImport });
+        const response = await axios.post(baseUrl + "dms-core/objects", metadataBody, { headers: headersImport });
         console.log(response.status);
         const oid = response.data.objects[0].properties["system:objectId"].value;
 
