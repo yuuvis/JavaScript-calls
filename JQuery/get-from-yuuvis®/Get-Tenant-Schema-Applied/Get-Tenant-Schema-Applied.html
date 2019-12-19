@@ -7,6 +7,7 @@
 <body>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
+    const key = ""
     function upload() {
         $.ajax({
             url: "https://api.yuuvis.io/dms-core/schema/native",
@@ -15,7 +16,7 @@
             cache: false,
             beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", key);
             },
             type: "GET"
         }).done(function(data) {

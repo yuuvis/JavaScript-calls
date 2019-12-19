@@ -7,6 +7,8 @@
 <body>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
+    const key = "";
+
     function upload() {
         const formData = new FormData();
         const schemaBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "application/xml" });
@@ -19,7 +21,7 @@
             cache: false,
             beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", key);
             },
             type: "POST",
 

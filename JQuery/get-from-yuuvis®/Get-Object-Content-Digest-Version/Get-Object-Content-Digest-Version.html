@@ -6,14 +6,16 @@
 </head>
 <body>
     ObjectId: <input type="text" value="objectId" id="objectIdInput"><br>
+    VersionNr: <input type="text" value="versionNr" id="versionNrInput"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
     const key = "";
     function upload() {
         const objectId = document.getElementById("objectIdInput").value;
+        const versionNr = document.getElementById("versionNrInput").value;
 
         $.ajax({
-            url: "https://api.yuuvis.io/dms-view/objects/" + objectId + "/contents/renditions/pdf",
+            url: "https://api.yuuvis.io/dms-core/objects/" + objectId + "/versions/" + versionNr + "/actions/validate/digest",
             processData: false,
             contentType: false,
             cache: false,

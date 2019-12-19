@@ -6,14 +6,16 @@
 </head>
 <body>
     ObjectId: <input type="text" value="objectId" id="objectIdInput"><br>
+    VersionNr: <input type="text" value="versionNr" id="versionNrInput"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
     const key = "";
     function upload() {
         const objectId = document.getElementById("objectIdInput").value;
+        const versionNr = document.getElementById("versionNrInput").value;
 
         $.ajax({
-            url: "https://api.yuuvis.io/dms-view/objects/" + objectId + "/contents/renditions/pdf",
+            url: "https://api.yuuvis.io/dms-core/objects/" + objectId + "/versions/" + versionNr,
             processData: false,
             contentType: false,
             cache: false,
@@ -21,7 +23,7 @@
                 // Request headers
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", key);
             },
-            type: "GET"
+            type: "DELETE"
         }).done(function(data) {
             alert("success");
             console.log(data);

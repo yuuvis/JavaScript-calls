@@ -5,17 +5,20 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
+    ObjectId: <input type="text" value="objectId" id="objectIdInput"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
+    const key = "";
     function upload() {
+        const objectId = document.getElementById("objectIdInput").value;
         $.ajax({
-            url: "https://api.yuuvis.io/dms-view/objects/{objectId}/contents/renditions/extract",
+            url: "https://api.yuuvis.io/dms-view/objects/" + objectId + "/contents/renditions/extract",
             processData: false,
             contentType: false,
             cache: false,
             beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", key);
             },
             type: "GET"
         }).done(function(data) {

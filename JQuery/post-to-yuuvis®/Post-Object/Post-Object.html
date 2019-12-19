@@ -9,7 +9,10 @@
     Content: <input type="file" value="contentdata"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
+    const key = "";
+
     function upload() {
+
         const formData = new FormData();
         const metadataBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "application/json" });
         const contentBlob = new Blob([$("input[type=file]")[1].files[0]], { type: "text/plain" });
@@ -23,7 +26,7 @@
             cache: false,
             beforeSend: function(xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "{subscription key}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", key);
             },
             type: "POST",
 
