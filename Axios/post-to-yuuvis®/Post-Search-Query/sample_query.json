@@ -1,0 +1,7 @@
+{
+  "query": {
+    "statement": "SELECT * FROM system:object",
+    "skipCount": 0,
+    "maxItems": 50
+  }
+}
