@@ -1,7 +1,7 @@
 const fs = require("fs");
 const axios = require("axios");
 
-const key = "your API key here";
+const key = "c14c917c38a64a5f82b73f4022fbb723";
 const baseUrl = "https://api.yuuvis.io/";
 
 let query = fs.createReadStream("sample_query.json")
@@ -11,7 +11,8 @@ axios.post(
     query,
     {
         headers: {
-            "Ocp-Apim-Subscription-Key": key
+            "Ocp-Apim-Subscription-Key": key,
+            "Content-Type": "application/json"
         }
     }).then(response => {
     console.log(response);
