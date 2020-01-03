@@ -1,0 +1,14 @@
+{
+  "name": "get-object-content-digest",
+  "version": "1.0.0",
+  "description": "retrieve object content digest endpoint axios example",
+  "main": "Post-Schema-Update.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}

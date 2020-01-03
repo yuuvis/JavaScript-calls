@@ -1,7 +1,7 @@
 const fs = require("fs");
 const axios = require("axios");
 
-const key = "c14c917c38a64a5f82b73f4022fbb723";
+const key = "";
 const baseUrl = "https://api.yuuvis.io/";
 
 let query = fs.createReadStream("sample_query.json")

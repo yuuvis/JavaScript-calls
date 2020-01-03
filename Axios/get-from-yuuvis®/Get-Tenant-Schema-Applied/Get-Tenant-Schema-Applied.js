@@ -1,8 +1,7 @@
 const axios = require("axios");
 
-const key = "your API key here";
+const key = "";
 const baseUrl = "https://api.yuuvis.io";
-const objectId = "your Object ID here";
 
 axios.get(
     baseUrl + "/dms-core/schema/native", {
