@@ -1,7 +1,8 @@
 const fs = require("fs");
 const axios = require("axios");
 
-const key = "your API key here";
+
+const key = "";
 const baseUrl = "https://api.yuuvis.io/";
 const objectId = "your Object ID here";
 
@@ -12,7 +13,8 @@ axios.post(
     newSchema,
     {
         headers: {
-            "Ocp-Apim-Subscription-Key": key
+            "Ocp-Apim-Subscription-Key": key,
+            "Content-Type": "application/xml"
         }
     }).then(response => {
     console.log(response);

@@ -34,6 +34,6 @@
             <propertyReference>from</propertyReference>
             <propertyReference>to</propertyReference>
             <propertyReference>received</propertyReference>
-	    <contentStreamAllowed>required</contentStreamAllowed>
+	    <contentStreamAllowed>allowed</contentStreamAllowed>
         </typeDocumentDefinition>
 </schema>
