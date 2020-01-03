@@ -1,5 +1,5 @@
 {
-  "name": "post-schema-update",
+  "name": "post-schema-validate",
   "version": "1.0.0",
   "description": "schema validate endpoint axios example",
   "main": "Post-Schema-Update.js",

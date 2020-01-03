@@ -1,7 +1,7 @@
 const fs = require("fs");
 const axios = require("axios");
 
-const key = "0208377eb42c4e1d925976a2d063d288";
+const key = "";
 const baseUrl = "https://api.yuuvis.io/";
 const objectId = "your Object ID here";
 
