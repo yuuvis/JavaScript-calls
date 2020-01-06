@@ -2,11 +2,14 @@
     "objects": [{
         "properties": {
             "objectTypeId": {
-                "value": "email"
+                "value": "Document"
             },
-            "from": {
+            "Name": {
                 "value": "max"
             }
-        }
+        },
+        "contentStreams": [{
+			"cid": "cid_63apple"
+		}]
     }]
 }
