@@ -5,7 +5,7 @@ https://api.yuuvis.io/dms-core/objects/{objectId}/contents/file
 | Header                    | Type   | Meaning                                                                                             |
 |---------------------------|--------|-----------------------------------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | String | Subscription key which provides access to the API. Found on the Subscriptions page of your account. |
-| Content-Disposition | String | Format: attachment;filename=<my filename> |
+| Content-Disposition | String | Format: attachment;filename=&lt;my filename&gt; |
 
 &rarr; [Documentation: Updating Document Content](https://github.com/yuuvis/Documentation/wiki/Update-documents#UpdatingDocumentsviaCoreAPI-UpdateContent)
 

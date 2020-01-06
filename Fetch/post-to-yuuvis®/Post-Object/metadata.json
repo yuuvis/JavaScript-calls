@@ -2,10 +2,10 @@
     "objects": [{
         "properties": {
             "objectTypeId": {
-                "value": "document"
+                "value": "email"
             },
-            "Name": {
-                "value": "test import"
+            "from": {
+                "value": "max"
             }
         }
     }]

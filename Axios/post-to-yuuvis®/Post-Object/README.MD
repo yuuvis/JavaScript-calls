@@ -7,6 +7,7 @@ https://api.yuuvis.io/dms-core/objects
 | Ocp-Apim-Subscription-Key | String | Subscription key which provides access to the API. Found on the Subscriptions page of your account. |
 
 !!!NOTE!!!
+
 Make sure to extend the your tenant schema with the example schema provided in the [Schema Update code example](https://github.com/yuuvis/JavaScript-calls/tree/feature/axiosReview/Axios/post-to-yuuvis%C2%AE/Post-Schema-Update) by retrieving your current schema and appending the contents of the sample_schema.xml file. This will allow you to import the example metadata associated with this code example.
 
 This code example uses the Two-Part import strategy to import documents with yuuvis®. This means it uses two HTTP requests: the first imports just the metadata .json file to create an object in yuuvis®; then the generated object ID is retrieved from the response; and finally the content of the new object is updated in a second HTTP request. This presents a workaround to using a multipart/binary request body, which can be difficult to set up with some JS HTTP libraries such as axios.
