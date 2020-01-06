@@ -1,8 +1,8 @@
 {
-  "name": "get-text-rendition",
+  "name": "get-rendition-text",
   "version": "1.0.0",
   "description": "retrieve text rendition endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Rendition-Text.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

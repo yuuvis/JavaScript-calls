@@ -1,8 +1,8 @@
 {
-  "name": "get-slide-rendition-version",
+  "name": "get-rendition-slide-version",
   "version": "1.0.0",
   "description": "retrieve slide rendition version endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Rendition-Slide-Version.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

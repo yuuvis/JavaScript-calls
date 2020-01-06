@@ -2,7 +2,7 @@
   "name": "get-tenant-schema-raw",
   "version": "1.0.0",
   "description": "retrieve raw tenant schema repository endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Tenant-Schema-Raw.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

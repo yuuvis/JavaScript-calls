@@ -2,7 +2,7 @@
   "name": "get-object-content",
   "version": "1.0.0",
   "description": "retrieve object content endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Object-Content.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

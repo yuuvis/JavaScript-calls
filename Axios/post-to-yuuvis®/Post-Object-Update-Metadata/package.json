@@ -2,7 +2,7 @@
   "name": "post-object-update-metadata",
   "version": "1.0.0",
   "description": "object metadata update endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Post-Object-Update-Metadata.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

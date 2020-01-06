@@ -2,7 +2,7 @@
   "name": "get-tenant-schema-applied",
   "version": "1.0.0",
   "description": "retrieve applied tenant schema endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Tenant-Schema-Applied.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

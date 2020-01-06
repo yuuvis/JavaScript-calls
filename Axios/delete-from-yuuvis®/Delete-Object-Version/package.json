@@ -2,7 +2,7 @@
   "name": "delete-object-version",
   "version": "1.0.0",
   "description": "delete object version endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Delete-Object-Version.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
