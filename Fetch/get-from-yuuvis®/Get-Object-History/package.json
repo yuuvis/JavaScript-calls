@@ -1,0 +1,14 @@
+{
+  "name": "get-object-history",
+  "version": "1.0.0",
+  "description": "retrieve object history endpoint fetch example",
+  "main": "Get-Object-History.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "get-object-content-digest",
+  "version": "1.0.0",
+  "description": "retrieve object content digest endpoint fetch example",
+  "main": "Get-Object-Content-Digest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}

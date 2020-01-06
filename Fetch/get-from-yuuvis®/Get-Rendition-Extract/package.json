@@ -1,0 +1,14 @@
+{
+  "name": "get-extraction-rendition",
+  "version": "1.0.0",
+  "description": "retrieve pdf rendition version endpoint fetch example",
+  "main": "Get-Rendition-Extract.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}

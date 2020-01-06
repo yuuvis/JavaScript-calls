@@ -1,0 +1,14 @@
+{
+  "name": "get-object-content-digest-version",
+  "version": "1.0.0",
+  "description": "retrieve object content digest version endpoint axios example",
+  "main": "Get-Object-Content-Digest-Version.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}

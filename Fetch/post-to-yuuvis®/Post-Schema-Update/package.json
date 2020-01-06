@@ -1,0 +1,14 @@
+{
+  "name": "post-schema-update",
+  "version": "1.0.0",
+  "description": "schema update endpoint fetch example",
+  "main": "Post-Schema-Update.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}

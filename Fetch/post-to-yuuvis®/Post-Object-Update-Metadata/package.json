@@ -1,0 +1,14 @@
+{
+  "name": "post-object-update-metadata",
+  "version": "1.0.0",
+  "description": "object metadata update endpoint fetch example",
+  "main": "Post-Object-Update-Metadata.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0"
+  }
+}
