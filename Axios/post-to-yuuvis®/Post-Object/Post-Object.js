@@ -13,6 +13,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+//make sure you have appended the sample_schema from the Post-Schema-Update example to your tenant schema 
 const metadataBody = fs.createReadStream("metadata.json");
 
 (async() => {
