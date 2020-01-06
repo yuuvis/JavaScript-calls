@@ -7,6 +7,9 @@
             "from": {
                 "value": "me"
             }
-        }
+        },
+        "contentStreams": [{
+			"cid": "cid_63apple"
+		}]
     }]
 }
