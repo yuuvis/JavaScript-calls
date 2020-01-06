@@ -2,7 +2,7 @@
   "name": "post-schema-validate",
   "version": "1.0.0",
   "description": "schema validate endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Post-Schema-Validate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

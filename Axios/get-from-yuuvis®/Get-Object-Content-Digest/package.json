@@ -2,7 +2,7 @@
   "name": "get-object-content-digest",
   "version": "1.0.0",
   "description": "retrieve object content digest endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Object-Content-Digest.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -2,7 +2,7 @@
   "name": "get-object-history",
   "version": "1.0.0",
   "description": "retrieve object history endpoint axios example",
-  "main": "Post-Schema-Update.js",
+  "main": "Get-Object-History.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

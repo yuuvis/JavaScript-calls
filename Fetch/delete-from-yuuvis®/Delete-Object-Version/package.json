@@ -1,14 +1,14 @@
 {
-  "name": "get-object-metadata-version",
+  "name": "delete-object-version",
   "version": "1.0.0",
-  "description": "retrieve object metadata version endpoint axios example",
-  "main": "Get-Object-Metadata-Version.js",
+  "description": "delete object version endpoint fetch example",
+  "main": "Post-Schema-Update.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "luedemann@optimal-systems.de",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0"
+    "node-fetch": "^2.6.0"
   }
 }

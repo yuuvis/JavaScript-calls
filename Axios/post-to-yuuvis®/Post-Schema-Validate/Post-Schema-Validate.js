@@ -3,7 +3,6 @@ const axios = require("axios");
 
 const key = "";
 const baseUrl = "https://api.yuuvis.io/";
-const objectId = "your Object ID here";
 
 let newSchema = fs.createReadStream("sample_schema.xml")
 
