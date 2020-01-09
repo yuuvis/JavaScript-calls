@@ -7,9 +7,12 @@
 <body>
 
     Content: <input type="file" value="contentdata" ><br>
+    ObjectId: <input type="text" value="objectId" id="objectIdInput"><br>
     <input type="button" onclick="upload()" value="Test">
 <script type="text/javascript">
     const key = "";
+    const objectId = document.getElementById("objectIdInput").value;
+
 
     function upload() {
         const formData = new FormData();

@@ -1,14 +1,14 @@
 {
-  "name": "delete-object-version",
+  "name": "get-rendition-pdf",
   "version": "1.0.0",
-  "description": "delete object version endpoint fetch example",
-  "main": "Delete-Object-Version.js",
+  "description": "retrieve PDF rendition endpoint request example",
+  "main": "Get-Rendition-PDF.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "luedemann@optimal-systems.de",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "request": "^2.88.0"
   }
 }
