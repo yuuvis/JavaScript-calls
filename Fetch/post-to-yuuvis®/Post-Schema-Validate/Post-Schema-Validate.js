@@ -6,7 +6,7 @@ const baseUrl = "https://api.yuuvis.io";
 
 fetch(baseUrl + "/admin/schema/validate", {
     method: "POST",
-    body: fs.createReadStream("new_schema.xml"),
+    body: fs.createReadStream("sample_schema.xml"),
     headers: {
         "Ocp-Apim-Subscription-Key": key,
         "Content-Type": "application/xml"

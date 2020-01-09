@@ -1,12 +1,9 @@
 {
     "objects": [{
         "properties": {
-            "Name": {
+            "from": {
                 "value": "updated attribute"
             }
-        },
-        "contentStreams": [{
-            "cid": "cid_63apple"
-        }]
+        }
     }]
 }

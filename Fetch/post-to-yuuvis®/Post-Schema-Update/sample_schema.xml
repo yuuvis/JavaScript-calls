@@ -5,19 +5,19 @@
             <id>from</id>
             <propertyType>string</propertyType>
             <cardinality>single</cardinality>
-            <required>true</required>
+            <required>false</required>
         </propertyStringDefinition>
         <propertyStringDefinition>
             <id>to</id>
             <propertyType>string</propertyType>
             <cardinality>multi</cardinality>
-            <required>true</required>
+            <required>false</required>
         </propertyStringDefinition>
 	<propertyStringDefinition>
             <id>subject</id>
             <propertyType>string</propertyType>
             <cardinality>single</cardinality>
-            <required>true</required>
+            <required>false</required>
             <defaultValue>hello</defaultValue>
             <maxLength>20</maxLength>
 	    <minLength>4</minLength>
@@ -26,7 +26,7 @@
             <id>received</id>
             <propertyType>datetime</propertyType>
             <cardinality>single</cardinality>
-            <required>true</required>
+            <required>false</required>
         </propertyDateTimeDefinition>
 	<typeDocumentDefinition>
             <id>email</id>
@@ -34,6 +34,6 @@
             <propertyReference>from</propertyReference>
             <propertyReference>to</propertyReference>
             <propertyReference>received</propertyReference>
-	    <contentStreamAllowed>required</contentStreamAllowed>
+	    <contentStreamAllowed>allowed</contentStreamAllowed>
         </typeDocumentDefinition>
 </schema>
