@@ -1,10 +1,9 @@
 {
-    "objects": [{
-        "properties": {
-            "objectTypeId": {
-                "value": "document"
-            },
-
-        },
-    }]
+	"objects": [{
+		"properties": {
+			"Name": {
+				"value": "dulli"
+			}
+		}
+	}]
 }
