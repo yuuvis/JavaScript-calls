@@ -24,7 +24,7 @@
 
     function upload() {
         const formData = metadataJson;
-        const objectId = document.getElementById("objectIdInput").value
+        const objectId = document.getElementById("objectIdInput").value;
 
         $.ajax({
             url: "https://api.yuuvis.io/dms-core/objects/"+objectId,

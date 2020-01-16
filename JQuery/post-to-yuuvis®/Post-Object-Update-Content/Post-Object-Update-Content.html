@@ -18,6 +18,7 @@
         const formData = new FormData();
         const contentBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "text/plain" });
         formData.append("file", contentBlob);
+        const objectId = document.getElementById("objectIdInput").value;
 
         $.ajax({
             url: "https://api.yuuvis.io/dms-core/objects/" + objectId + "/contents/file",

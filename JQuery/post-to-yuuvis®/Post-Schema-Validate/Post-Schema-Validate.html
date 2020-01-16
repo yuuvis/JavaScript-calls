@@ -10,9 +10,7 @@
     const key = "";
 
     function upload() {
-        const formData = new FormData();
         const schemaBlob = new Blob([$("input[type=file]")[0].files[0]], { type: "application/xml" });
-        formData.append("file", schemaBlob);
 
         $.ajax({
             url: "https://api.yuuvis.io/admin/schema/validate",
@@ -22,10 +20,12 @@
             beforeSend: function(xhrObj) {
                 // Request headers
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", key);
+                xhrObj.setRequestHeader("Content-Type", "application/xml")
+
             },
             type: "POST",
 
-            data: formData
+            data: schemaBlob
         }).done(function(data) {
             alert("success");
             console.log(data);
