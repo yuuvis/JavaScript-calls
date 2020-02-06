@@ -1,38 +1,38 @@
-const fetch = require("node-fetch");
 const fs = require("fs");
+const fetch = require("node-fetch");
+var FormData = require("form-data");
 
-const key = "your API key here";
-const baseUrl = "https://api.yuuvis.io";
 
-//Import Metadata
+const key = "";
+const baseUrl = "https://api.yuuvis.io/dms-core";
+
+const data = new FormData();
+
+const metadataBody = fs.createReadStream("metadata.json");
+data.append("data", metadataBody);
+
+const contentBody = fs.createReadStream("test.txt");
+data.append("cid_63apple", contentBody);
+
 const headersImport = {
-    "Content-Type": "application/json",
     "Ocp-Apim-Subscription-Key": key
 };
+
+
 const optionsImport = {
     method: "POST",
-    body: fs.createReadStream("metadata.json"),
+    body: data,
     headers: headersImport
 };
 
 (async() => {
     try {
-        const response = await fetch(baseUrl + "/dms-core/objects/", optionsImport);
+        const response = await fetch(baseUrl + "/objects/", optionsImport);
         const data = await response.json();
         const oid = data.objects[0].properties["system:objectId"].value;
         console.log("new oid: ", oid);
 
-        //Add contentStreamAllowed
-        const headersContentUpdate = {
-            "Ocp-Apim-Subscription-Key": key,
-            "Content-Disposition": "attachment; filename=\"test.txt\""
-        };
-        const optionsContentUpdate = {
-            method: "POST",
-            body: fs.createReadStream("test.txt"),
-            headers: headersContentUpdate
-        };
-        console.log(await fetch(baseUrl + "/dms-core/objects/" + oid + "/contents/file", optionsContentUpdate));
+
     } catch (error) {
         console.log(error);
     }

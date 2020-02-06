@@ -1,8 +1,8 @@
 {
     "objects": [{
         "properties": {
-            "from": {
-                "value": "updated attribute"
+            "Name": {
+                "value": "I'm the homie"
             }
         }
     }]

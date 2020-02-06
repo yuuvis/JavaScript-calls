@@ -2,9 +2,9 @@
     "objects": [{
         "properties": {
             "objectTypeId": {
-                "value": "email"
+                "value": "document"
             },
-            "from": {
+            "Name": {
                 "value": "me"
             }
         }
