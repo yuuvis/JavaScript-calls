@@ -9,4 +9,4 @@ https://api.yuuvis.io/dms-core/objects
 
 &rarr; [Documentation: Importing Documents](https://github.com/yuuvis/Documentation/wiki/Import-and-store)
 
-&rarr; [Try out the endpoint in our developer portal](https://yuuvis.io/Apis/Endpoints/dms-core-api)
+&rarr; [Try out the endpoint in our developer portal](https://developer.yuuvis.com/Apis/Endpoints/dms-core-api)
