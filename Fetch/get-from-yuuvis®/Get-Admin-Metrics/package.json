@@ -1,0 +1,14 @@
+{
+  "name": "get-tenant-schema-raw",
+  "version": "1.0.0",
+  "description": "retrieve raw tenant schema endpoint fetch example",
+  "main": "Get-Tenant-Schema-Raw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luedemann@optimal-systems.de",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
