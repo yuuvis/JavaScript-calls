@@ -20,12 +20,7 @@ formDataHeaders["Ocp-Apim-Subscription-Key"] = key;
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-<<<<<<< HEAD
-//make sure you have appended the sample_schema from the Post-Schema-Update example to your tenant schema 
 const metadataBody = fs.createReadStream("metadata.json");
-=======
->>>>>>> simplify axios/fetch import request
 
 (async() => {
     try {
